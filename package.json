@@ -1,0 +1,30 @@
+{
+  "name": "logitech-g29-web",
+  "description": "Logitech G29 Racing Wheel for Browser",
+  "version": "1.0.0",
+  "author": "Kai Nightmode (Browser port by Claude)",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "rollup": "^2.79.1",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "keywords": [
+    "logitech",
+    "g29",
+    "racing wheel",
+    "webhid",
+    "browser"
+  ],
+  "license": "CC0-1.0",
+  "main": "./dist/logitech-g29.js",
+  "module": "./dist/logitech-g29.esm.js",
+  "browser": "./dist/logitech-g29.iife.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "serve": "http-server -o example.html"
+  },
+  "files": [
+    "dist"
+  ]
+}
