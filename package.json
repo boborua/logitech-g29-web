@@ -1,7 +1,7 @@
 {
   "name": "logitech-g29-web",
   "description": "Logitech G29 Racing Wheel for Browser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Kai Nightmode (Browser port by Claude)",
   "devDependencies": {
     "http-server": "^14.1.1",
