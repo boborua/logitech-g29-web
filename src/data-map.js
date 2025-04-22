@@ -294,14 +294,19 @@ function wheelSpinnerAndButtons(data, memory) {
 } // wheelSpinnerAndButtons
 
 function wheelTurn(data, memory) {
-  let d = data[4];
-  let e = data[5];
+  let wheelCourse = data[5]; // 0-255
+  let wheelFine = data[4]; // 0-255
 
-  let turn = e * 256 + d;
+  wheelCourse = (wheelCourse / 255) * (100 - 100 / 256); // returns a number between 0 and 99.609375
+  wheelFine = (wheelFine / 255) * (100 / 256); // returns a number between 0 and 0.390625
 
-  turn = round(turn / 2.55, 0);
+  let wheel = round(wheelCourse + wheelFine, 2);
 
-  memory.wheel.turn = turn;
+  if (wheel > 100) wheel = 100; // wheel turned completely right
+
+  if (wheel < 0) wheel = 0; // wheel turned completely left
+
+  memory.wheel.turn = wheel;
 
   return memory;
 } // wheelTurn
